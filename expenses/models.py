@@ -15,7 +15,7 @@ class Expense(models.Model):
     user = models.ForeignKey(CustomUser, on_delete=models.CASCADE, null=True)
     description = models.CharField(max_length=255, help_text="e.g., 'Lunch at McDonald's'")
     amount = models.DecimalField(max_digits=10, decimal_places=2)
-    date = models.DateField(default=timezone.now)
+    date = models.DateTimeField(default=timezone.now)
     category = models.CharField(max_length=50, choices=CATEGORIES, default='Food')
 
     def __str__(self):
